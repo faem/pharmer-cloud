@@ -74,3 +74,8 @@ var _ clientset.Interface = &Clientset{}
 func (c *Clientset) CloudV1() cloudv1.CloudV1Interface {
 	return &fakecloudv1.FakeCloudV1{Fake: &c.Fake}
 }
+
+// Cloud retrieves the CloudV1Client
+func (c *Clientset) Cloud() cloudv1.CloudV1Interface {
+	return &fakecloudv1.FakeCloudV1{Fake: &c.Fake}
+}
